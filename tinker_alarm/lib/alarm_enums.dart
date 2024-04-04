@@ -1,8 +1,6 @@
 enum ConditionType
 {
   none,
-  ifEarlierAlarmPresent,
-  ifLaterAlarmPresent,
   ifBeforeDate,
   ifAfterDate,
   onDaysOfTheWeek,
@@ -13,7 +11,6 @@ enum ConditionType
 
 enum EffectType
 {
-  alarm,
   delete,
   deactivate,
   reactivate,
