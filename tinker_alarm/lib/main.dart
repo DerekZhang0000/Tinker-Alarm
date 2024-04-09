@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
-import 'alarm.dart';
+import 'package:alarm/alarm.dart';
+import 'package:alarm/model/alarm_settings.dart';
+// import 'tinkeralarm.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
+  await Alarm.init();
+  await Alarm.set(alarmSettings: AlarmSettings(
+    id: 0,
+    dateTime: DateTime.now().add(const Duration(seconds: 5)),
+    assetAudioPath: 'assets/audios/alarm1.mp3',
+    volume: 1,
+    fadeDuration: 2.0,
+    notificationTitle: 'Alarm',
+    notificationBody: 'Alarm is ringing',
+    enableNotificationOnKill: true,
+  ));
 }
 
 class MyApp extends StatelessWidget {
